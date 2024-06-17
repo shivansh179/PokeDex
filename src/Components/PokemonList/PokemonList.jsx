@@ -3,6 +3,7 @@ import axios from 'axios';
 import Pokemon from '../Pokemon/Pokemon';
 import './PokemonList.css'
 
+
 function PokemonList () {
 
     const DEFAULT_URL = "https://pokeapi.co/api/v2/pokemon";
@@ -11,15 +12,18 @@ function PokemonList () {
     const [nextURL , setNextURL] = useState(DEFAULT_URL);
     const [prevURL , setPrevURL] = useState(DEFAULT_URL);
 
+   
+
      async function downloadPokemons(){
 
-            const response = await axios.get(pokedexUrl ? pokedexUrl : DEFAULT_URL);
+            const response = await axios.get(setPokemonList.pokedexUrl ? setPokemonList.pokedexUrl : DEFAULT_URL);
      
             const Individual_data = response.data.results;
 
             setNextURL(response.data.next);
             setPrevURL(response.data.previous);
-
+ 
+            
 
             const pokemon_promise = Individual_data.map((pokemon) => axios.get(pokemon.url));
             const pokemonListData = await axios.all(pokemon_promise);

@@ -1,5 +1,10 @@
 .pokedex-redirect{
     text-align: center;
+    font-family: monospace;
+}
+
+.redirect{
+    text-decoration: none;
 }
 
 .pokemon-details-wrapper{
@@ -41,3 +46,4 @@
     align-items: center;
     justify-content: center;
 }
+ 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './PokemonDetails.css'
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
-
+ 
 function PokemonDetails(){
 
   const { id } = useParams();
@@ -34,9 +34,10 @@ function PokemonDetails(){
   return (
     <>
     <h1 className='pokedex-redirect'>
-     <Link to={"/"}>POKEDEX</Link>
+     <Link to={"/"} className='redirect'>POKEDEX</Link>
     </h1>
 
+ 
     {Pokemon && <div className='pokemon-details-wrapper'>
       <div className='pokemon-detail-name'>
         {Pokemon.name}
